@@ -1,6 +1,6 @@
 import React from 'react';
 
-function CallbackHell() {
+export const CallbackHell = () => {
   class UserStorage {
     loginUser(id, password, onSuccess, onError) {
       setTimeout(() => {
@@ -44,7 +44,14 @@ function CallbackHell() {
     error => console.log(error)
   );
 
-  return <div>콜백 지옥</div>;
-}
-
-export default CallbackHell;
+  return (
+    <div>
+      <h1>콜백 지옥</h1>
+      <h3>class UserStorage</h3>
+      <h3>const userStorage = new UserStorage( );</h3>
+      <ul>
+        <li>class는 new 키워드를 이용하여 object를 생성할 수 있다.</li>
+      </ul>
+    </div>
+  );
+};

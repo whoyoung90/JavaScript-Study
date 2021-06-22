@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Callback() {
+export const Callback = () => {
   console.log('1');
   setTimeout(() => console.log('2'), 1000);
   console.log('3');
@@ -31,5 +31,4 @@ function Callback() {
   // printWithDelay(() => console.log('Async callback'), 2000);
 
   return <div>동기 콜백 & 비동기 콜백</div>;
-}
-export default Callback;
+};
