@@ -34,7 +34,7 @@ function CallbackHell() {
       userStorage.getRoles(
         user,
         userWithRole => {
-          alert(`Hello ${userWithRole.name}, you are a ${userWithRole.role}.`);
+          alert(`Hello ${userWithRole.name}, you are a ${userWithRole.role}!`);
         },
         error => {
           console.log(error);
