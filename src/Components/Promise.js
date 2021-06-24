@@ -9,23 +9,19 @@ export const ProMise = () => {
       'when new Promise is created, the executer runs automatically !!'
     );
 
-    setTimeout(() => {
-      // resolve('value is wooyoung');
-      reject('error reason..');
-    }, 2000);
+    setTimeout(
+      () =>
+        // resolve('value is wooyoung')
+        reject('error reason..'),
+      2000
+    );
   });
 
   // 2. Consumers : then, catch, finally
   promise
-    .then(value => {
-      console.log(value);
-    })
-    .catch(error => {
-      console.log(error);
-    })
-    .finally(() => {
-      console.log('finally'); //성공,실패 상관없이 무조건 마지막에 호출
-    });
+    .then(value => console.log(value))
+    .catch(error => console.log(error))
+    .finally(() => console.log('finally')); //성공,실패 상관없이 무조건 마지막에 호출
 
   // 3. Promise Chaining : 비동기들을 묶어서 한번에 처리할 수도 있다
   const fetchNumber = new Promise((resolve, reject) => {
@@ -44,20 +40,18 @@ export const ProMise = () => {
 
   // 4. Error Handling     //new Promise밖에 대괄호 금지 const getPig = () => { new Promise() } X
   const getPig = () =>
-    new Promise((resolve, reject) => {
-      setTimeout(() => resolve('🐷'), 1000);
-    });
+    new Promise((resolve, reject) => setTimeout(() => resolve('🐷'), 1000));
 
   const getMeat = pig =>
-    new Promise((resolve, reject) => {
+    new Promise((resolve, reject) =>
       // setTimeout(() => resolve(`${pig} => 🥩`), 1000);
-      setTimeout(() => reject(new Error(`error! ${pig} => 🥩`)), 1000);
-    });
+      setTimeout(() => reject(new Error(`error! ${pig} => 🥩`)), 1000)
+    );
 
   const cook = meat =>
-    new Promise((resolve, reject) => {
-      setTimeout(() => resolve(`${meat} => 🍔`), 1000);
-    });
+    new Promise((resolve, reject) =>
+      setTimeout(() => resolve(`${meat} => 🍔`), 1000)
+    );
 
   getPig() //then에서 콜백함수 전달 시, 받아오는 value 생략가능!
     .then(getMeat)
