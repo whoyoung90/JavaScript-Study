@@ -13,10 +13,10 @@ export const Async = () => {
   }
   async function fetchUsers() {
     // 비동기 코드
-    return 'queen';
+    return 'king';
   }
 
-  const users = fetchUsers();
+  const users = fetchUsers(); //함수를 변수화 시켜야 console.log 잡힘
   users.then(console.log);
   console.log(users);
 
@@ -25,48 +25,47 @@ export const Async = () => {
     return new Promise((resolve, reject) => setTimeout(resolve, ms));
   }
 
-  async function getApple() {
+  async function getBeer() {
     await delay(2000);
     // throw 'error test';
-    return '🍎';
+    return '🍺';
   }
 
-  async function getBanana() {
+  async function getPizza() {
     await delay(1000);
-    return '🍌';
+    return '🍕';
   }
-  // function getBanana() {
-  //   return delay(3000).then(() => '🍌');
+  // function getPizza() {
+  //   return delay(3000).then(() => '🍕');
   // }
 
   async function pickFruits() {
     try {
-      const apple = await getApple();
-      const banana = await getBanana();
-      return `${apple} + ${banana} (2+1초)`;
+      const beer = await getBeer();
+      const pizza = await getPizza();
+      return `${beer} + ${pizza} (2+1초)`;
+
+      // return getBeer().then(beer => {
+      //   return getPizza().then(pizza => `${beer} + ${pizza} (2+1초)`);
+      // })
     } catch (e) {
       return `no network`;
     }
   }
-  // function pickFruits() {
-  //   return getApple().then(apple => {
-  //     return getBanana().then(banana => `${apple} + ${banana}`);
-  //   });
-  // }
   pickFruits().then(console.log).catch(console.log);
 
   // 3. useful APIs : await 병렬 처리 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
   function pickAllFruits() {
-    return Promise.all([getApple(), getBanana()]).then(
-      fruits => fruits.join(' + ') //배열을 String 으로 묶을 수 있는 join
+    return Promise.all([getBeer(), getPizza()]).then(
+      fruits => fruits.join(' ++ ') //배열을 String 으로 묶을 수 있는 join
     );
   }
   pickAllFruits().then(console.log);
 
-  // function pickOnlyOne() {
-  //   return Promise.race([getApple(), getBanana()]);
-  // }
-  // pickOnlyOne().then(console.log);
+  function pickOnlyOne() {
+    return Promise.race([getBeer(), getPizza()]);
+  }
+  pickOnlyOne().then(console.log);
 
   return (
     <>
