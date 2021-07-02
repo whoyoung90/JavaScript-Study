@@ -2,7 +2,8 @@ import React from 'react';
 // import { Callback } from '../Components/Callback';
 // import { CallbackHell } from '../Components/CallbackHell';
 // import { ProMise } from '../Components/Promise';
-import { CallbackHellToPromise } from '../Components/CallbackHell-to-Promise';
+// import { CallbackHellToPromise } from '../Components/CallbackHell-to-Promise';
+import { Async } from '../Components/Async';
 
 const Main = () => {
   return (
@@ -10,7 +11,8 @@ const Main = () => {
       {/* <Callback /> */}
       {/* <CallbackHell /> */}
       {/* <ProMise /> */}
-      <CallbackHellToPromise />
+      {/* <CallbackHellToPromise /> */}
+      <Async />
     </div>
   );
 };
