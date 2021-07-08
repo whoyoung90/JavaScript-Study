@@ -5,7 +5,8 @@ import React from 'react';
 // import { CallbackHellToPromise } from '../Components/CallbackHell-to-Promise';
 // import { Async } from '../Components/Async';
 // import { DataType } from '../Components/DataType';
-import { Class } from '../Components/Class';
+// import { Class } from '../Components/Class';
+import { Objects } from '../Components/Objects';
 
 const Main = () => {
   return (
@@ -16,7 +17,8 @@ const Main = () => {
       {/* <CallbackHellToPromise /> */}
       {/* <Async /> */}
       {/* <DataType /> */}
-      <Class />
+      {/* <Class /> */}
+      <Objects />
     </div>
   );
 };
